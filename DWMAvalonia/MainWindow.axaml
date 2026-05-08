@@ -1,0 +1,38 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="DWMAvalonia.MainWindow"
+        Background="{x:Null}"
+        TransparencyLevelHint="Transparent"
+        TransparencyBackgroundFallback="Transparent"
+        Width="800" Height="450"
+        Title="DWMAvalonia">
+
+    <Grid Background="Transparent">
+        <!-- Your Corner Rectangles -->
+        <Rectangle Fill="Red" Width="100" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
+        <Rectangle Fill="Green" Width="100" Height="100" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
+        <Rectangle Fill="Blue" Width="100" Height="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10"/>
+        <Rectangle Fill="Yellow" Width="100" Height="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10"/>
+
+        <!-- The Control Panel -->
+        <Border Background="#88000000" CornerRadius="8" Padding="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Spacing="15" Width="250">
+                <TextBlock Text="DWM Settings" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center"/>
+
+                <ComboBox x:Name="BackdropComboBox" SelectedIndex="2" HorizontalAlignment="Stretch">
+                    <ComboBoxItem>Auto (0)</ComboBoxItem>
+                    <ComboBoxItem>Disable (1)</ComboBoxItem>
+                    <ComboBoxItem>Mica (2)</ComboBoxItem>
+                    <ComboBoxItem>Acrylic (3)</ComboBoxItem>
+                    <ComboBoxItem>Mica Alt (4)</ComboBoxItem>
+                </ComboBox>
+
+                <TextBox x:Name="TitleBarColorBox" Watermark="TitleBar Hex (e.g. #FF0000)" />
+
+                <CheckBox x:Name="DarkModeCheck" Content="Immersive Dark Mode" Foreground="White" IsChecked="True"/>
+
+                <Button Content="Update DWM Attributes" Click="OnUpdateClick" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
